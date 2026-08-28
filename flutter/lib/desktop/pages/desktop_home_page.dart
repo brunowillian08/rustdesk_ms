@@ -59,7 +59,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final isIncomingOnly = bind.isIncomingOnly();
+    final isIncomingOnly = true;
     return _buildBlock(
         child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,6 +93,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       buildTip(context),
       if (!isOutgoingOnly) buildIDBoard(context),
       if (!isOutgoingOnly) buildPasswordBoard(context),
+      /* REMOVIDO PARA OCULTAR O BOTAO DE INSTALACAO
       FutureBuilder<Widget>(
         future: Future.value(
             Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
@@ -111,6 +112,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           }
         },
       ),
+      */
       buildPluginEntry(),
     ];
     if (isIncomingOnly) {
