@@ -173,8 +173,9 @@ void runMainApp(bool startService) async {
     }
     windowManager.setOpacity(1);
     windowManager.setTitle(getWindowName());
-    // Do not use `windowManager.setResizable()` here.
-    setResizable(!bind.isIncomingOnly());
+    // Trava o redimensionamento e desativa o botão de maximizar
+    windowManager.setResizable(false);
+    windowManager.setMaximizable(false);
   });
 }
 
