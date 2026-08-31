@@ -62,7 +62,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final isIncomingOnly = true;
     return _buildBlock(
         child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         buildLeftPane(context),
         if (!isIncomingOnly) const VerticalDivider(width: 1),
