@@ -6,7 +6,7 @@
 
 		<DirectoryRef Id="INSTALLFOLDER_INNER" FileSource="$(var.BuildDir)">
 			<Component Id="App.exe" Guid="620F0F69-4C17-4320-A619-495E329712A4">
-				<File Id="App.exe" Name="MSSuporte.exe" Source="$(var.BuildDir)rustdesk.exe" KeyPath="yes" Checksum="yes">
+				<File Id="App.exe" Name="MSSuporte.exe" Source="$(var.BuildDir)\rustdesk.exe" KeyPath="yes" Checksum="yes">
 					<!--<fire:FirewallException Id="AppEx" Name="$(var.Product) Service" Scope="any" IgnoreFailure="yes" />-->
 				</File>
 			</Component>
