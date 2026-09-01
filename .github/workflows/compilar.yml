@@ -187,9 +187,14 @@ jobs:
           sed -i '/dpiAware/d' res/manifest.xml
           pushd ./libs/portable
           pip3 install -r requirements.txt
-          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/mssuporte.exe
+          
+          # 1. ATENÇÃO AQUI: Garanta que o final desta linha seja rustdesk.exe
+          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/rustdesk.exe
+          
           popd
           mkdir -p ./SignOutput
+          
+          # 2. ATENÇÃO AQUI: Mude o destino final para MSSuporte
           mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/MSSuporte-${{ env.VERSION }}-${{ matrix.job.arch }}.exe
 
       - name: Add MSBuild to PATH
@@ -209,8 +214,9 @@ jobs:
       - name: Upload portable artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: rustdesk-portable-x64
-          path: ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe
+          name: MSSuporte-portable-x64
+          # ATENÇÃO AQUI: Atualize o path para procurar o MSSuporte
+          path: ./SignOutput/MSSuporte-*.exe
 
       - name: Publish Release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
