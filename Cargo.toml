@@ -1,5 +1,5 @@
 [package]
-name = "rustdesk"
+name = "mssuporte"
 version = "1.4.9"
 authors = ["rustdesk <info@rustdesk.com>"]
 edition = "2021"
